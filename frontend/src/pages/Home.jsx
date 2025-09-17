@@ -43,7 +43,7 @@ const Home = () => {
   }
 
   return (
-    <div className="min-h-[90vh] flex flex-col items-center justify-center bg-gray-50 p-6">
+    <div className="min-h-[90vh] flex flex-col  bg-gray-50 p-6">
       {/* Top Bar */}
       <div className="flex justify-between w-full max-w-sm mb-4 text-gray-500">
         <HelpCircle className="w-6 h-6" />
@@ -67,7 +67,7 @@ const Home = () => {
         {/* Login Again Button */}
         <button
           onClick={handleLogout}
-          className="w-full bg-red-600 text-white py-3 rounded-lg font-semibold flex items-center justify-center hover:bg-red-700 transition"
+          className="w-full bg-red-600 text-white py-3 rounded-full font-semibold flex items-center justify-center hover:bg-red-700 transition"
         >
           Login Again
         </button>

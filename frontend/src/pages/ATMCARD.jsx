@@ -48,7 +48,7 @@ const ATMCARD = () => {
   };
 
   return (
-    <div className="min-h-[90vh] flex flex-col items-center justify-center bg-gray-50 p-6">
+    <div className="min-h-[90vh] flex flex-col bg-gray-50 p-6">
       {/* Top Bar */}
       <div className="flex justify-between w-full max-w-sm mb-4 text-gray-500">
         <HelpCircle className="w-6 h-6" />
@@ -75,7 +75,7 @@ const ATMCARD = () => {
             placeholder="Enter Card Number (16 digits)"
             value={cardNumber}
             onChange={handleCardChange}
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 tracking-widest"
+            className="w-full p-3 border rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 tracking-widest"
           />
         </div>
 
@@ -87,7 +87,7 @@ const ATMCARD = () => {
             placeholder="Enter PIN (4 digits)"
             value={pin}
             onChange={handlePinChange}
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 pr-10"
+            className="w-full p-3 border rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 pr-10"
             maxLength={4}
           />
           <button
@@ -107,7 +107,7 @@ const ATMCARD = () => {
         <button
           onClick={handleSubmit}
           disabled={loading}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold flex items-center justify-center disabled:bg-gray-300"
+          className="w-full bg-blue-600 text-white py-3 rounded-full font-semibold flex items-center justify-center disabled:bg-gray-300"
         >
           {loading ? <Loader2 className="animate-spin w-5 h-5" /> : "Submit"}
         </button>

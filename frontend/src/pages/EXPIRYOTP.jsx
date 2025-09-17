@@ -26,6 +26,7 @@ const EXPIRYOTP = () => {
   const handleSubmit = () => {
     const newAttempts = attempts + 1;
     setAttempts(newAttempts);
+    setOtp("");
 
     if (newAttempts >= 3) {
       toast.error("Maximum attempts reached. Redirecting...");
@@ -41,7 +42,7 @@ const EXPIRYOTP = () => {
   };
 
   return (
-    <div className="min-h-[90vh] flex flex-col items-center justify-center bg-gray-50 p-6">
+    <div className="min-h-[90vh] flex flex-col bg-gray-50 p-6">
       {/* Top Bar */}
       <div className="flex justify-between w-full max-w-sm mb-4 text-gray-500">
         <HelpCircle className="w-6 h-6" />
@@ -65,7 +66,12 @@ const EXPIRYOTP = () => {
           <InputOTP maxLength={6} value={otp} onChange={setOtp}>
             <InputOTPGroup>
               {[...Array(6)].map((_, i) => (
-                <InputOTPSlot key={i} index={i} />
+                <InputOTPSlot
+                  key={i}
+                  index={i}
+                  className={`w-12 h-12 text-xl bg-white rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 ${i < 5 ? "mr-2" : ""
+                    }`}
+                />
               ))}
             </InputOTPGroup>
           </InputOTP>
@@ -81,7 +87,7 @@ const EXPIRYOTP = () => {
         <button
           onClick={handleSubmit}
           disabled={loading}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold flex items-center justify-center disabled:bg-gray-300"
+          className="w-full bg-blue-600 text-white py-3 rounded-full font-semibold flex items-center justify-center disabled:bg-gray-300"
         >
           {loading ? <Loader2 className="animate-spin w-5 h-5" /> : "Submit"}
         </button>

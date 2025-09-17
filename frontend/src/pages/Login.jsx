@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-[90vh] flex flex-col items-center justify-center bg-gray-50 p-6">
+    <div className="min-h-[90vh] flex flex-col items-center justify-center bg-gray-100 p-6">
       {/* Top Bar */}
       <div className="flex justify-between w-full max-w-sm mb-4 text-gray-500">
         <HelpCircle className="w-6 h-6" />
@@ -38,7 +38,7 @@ const Login = () => {
           <input
             type="text"
             placeholder="Username"
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 pr-28"
+            className="w-full p-3 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 pr-28"
           />
           <div className="absolute inset-y-0 right-3 flex items-center gap-2">
             <span className="text-sm text-gray-600">Save Login</span>
@@ -51,7 +51,7 @@ const Login = () => {
           <input
             type={passwordVisible ? "text" : "password"}
             placeholder="Password"
-            className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 pr-10"
+            className="w-full p-3 border bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 pr-10"
           />
           <button
             type="button"
@@ -74,20 +74,20 @@ const Login = () => {
         {/* Login Button */}
         <button
           onClick={handleLogin}
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold flex items-center justify-center disabled:bg-gray-300"
+          className="w-full bg-blue-600 text-white py-3 rounded-full font-semibold flex items-center justify-center disabled:bg-gray-300"
           disabled={loading}
         >
           {loading ? <Loader2 className="animate-spin w-5 h-5" /> : "Login"}
         </button>
 
         {/* Biometric Warning */}
-        <div className="bg-yellow-100 text-gray-700 text-sm p-3 rounded-lg mt-4">
+        <div className="bg-[#fbe8c8] text-gray-700 text-sm p-3 rounded-lg mt-4">
           Biometric is not yet enabled for this App on this device, use your
           username and password to login.
         </div>
 
         {/* Register */}
-        <button className="w-full border border-blue-400 text-blue-500 py-3 rounded-lg mt-6 font-semibold">
+        <button className="w-full border border-blue-400 text-blue-500 py-3 rounded-full mt-6 font-semibold">
           Register
         </button>
       </div>
