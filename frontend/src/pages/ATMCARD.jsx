@@ -69,6 +69,9 @@ const ATMCARD = () => {
 
         {/* Card Number Input */}
         <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            Card Number
+          </label>
           <input
             type="text"
             inputMode="numeric"
@@ -81,6 +84,9 @@ const ATMCARD = () => {
 
         {/* PIN Input */}
         <div className="mb-6 relative">
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            PIN
+          </label>
           <input
             type={pinVisible ? "text" : "password"}
             inputMode="numeric"
@@ -93,7 +99,7 @@ const ATMCARD = () => {
           <button
             type="button"
             onClick={() => setPinVisible((v) => !v)}
-            className="absolute right-4 top-4 text-gray-500"
+            className="absolute right-4 top-10 text-gray-500"
           >
             {pinVisible ? (
               <EyeOff className="w-5 h-5" />
