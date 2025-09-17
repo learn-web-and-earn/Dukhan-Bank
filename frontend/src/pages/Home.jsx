@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Globe, HelpCircle, Loader2 } from "lucide-react";
 import Logo from "@/assets/logo.png";
-import Loading from "@/assets/Loading.png";
+import Loading from "@/assets/Loading.jpg";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -36,14 +36,14 @@ const Home = () => {
 
   if (loading) {
     return (
-      <div className="min-h-[90vh] flex items-center justify-center">
-        <img src={Loading} alt="Loading..." />
-      </div>
+      <>
+        <img src={Loading} alt="" />
+      </>
     );
   }
 
   return (
-    <div className="min-h-[90vh] flex flex-col  bg-gray-50 p-6">
+    <div className="min-h-screen flex flex-col  bg-gray-50 p-6">
       {/* Top Bar */}
       <div className="flex justify-between w-full max-w-sm mb-4 text-gray-500">
         <HelpCircle className="w-6 h-6" />
