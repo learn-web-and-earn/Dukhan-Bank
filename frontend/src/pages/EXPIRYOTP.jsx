@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Globe, HelpCircle, Loader2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../assets/Logo.png";
+import Logo from "@/assets/Logo.png";
 import { toast } from "react-toastify";
 import {
   InputOTP,
