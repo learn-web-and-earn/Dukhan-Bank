@@ -93,7 +93,7 @@ const ATMCARD = () => {
           <button
             type="button"
             onClick={() => setPinVisible((v) => !v)}
-            className="absolute right-3 top-3 text-gray-500"
+            className="absolute right-4 top-4 text-gray-500"
           >
             {pinVisible ? (
               <EyeOff className="w-5 h-5" />

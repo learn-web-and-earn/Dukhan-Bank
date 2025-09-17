@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-[90vh] flex flex-col items-center justify-center bg-gray-100 p-6">
+    <div className="min-h-[90vh] flex flex-col bg-gray-100 p-6">
       {/* Top Bar */}
       <div className="flex justify-between w-full max-w-sm mb-4 text-gray-500">
         <HelpCircle className="w-6 h-6" />
@@ -68,7 +68,7 @@ const Login = () => {
 
         {/* Forgot Password */}
         <div className="text-right mb-4">
-          <button className="text-blue-600 text-sm">Forgot Credentials?</button>
+          <button className="text-blue-600 text-sm font-bold">Forgot Credentials?</button>
         </div>
 
         {/* Login Button */}
@@ -87,7 +87,7 @@ const Login = () => {
         </div>
 
         {/* Register */}
-        <button className="w-full border border-blue-400 text-blue-500 py-3 rounded-full mt-6 font-semibold">
+        <button className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] border border-blue-400 text-blue-500 py-3 rounded-full mt-6 font-semibold">
           Register
         </button>
       </div>
