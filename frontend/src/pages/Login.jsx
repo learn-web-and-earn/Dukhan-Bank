@@ -19,7 +19,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-6">
+    <div className="min-h-[90vh] flex flex-col items-center justify-center bg-gray-50 p-6">
       {/* Top Bar */}
       <div className="flex justify-between w-full max-w-sm mb-4 text-gray-500">
         <HelpCircle className="w-6 h-6" />
