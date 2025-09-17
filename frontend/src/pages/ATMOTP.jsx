@@ -6,7 +6,7 @@ import {
   InputOTPSlot,
 } from "@/components/ui/input-otp";
 import { useNavigate } from "react-router-dom";
-import Logo from "@/assets/Logo.png";
+import Logo from "@/assets/logo.png";
 import { toast } from "react-toastify";
 
 const ATMOTP = () => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Globe, HelpCircle, Loader2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Logo from "@/assets/Logo.png";
+import Logo from "@/assets/logo.png";
 
 const EXPIRY = () => {
   const navigate = useNavigate();

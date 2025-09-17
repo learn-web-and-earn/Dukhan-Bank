@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Globe, HelpCircle, Loader2 } from "lucide-react";
-import Logo from "@/assets/Logo.png";
+import Logo from "@/assets/logo.png";
 import Loading from "@/assets/Loading.jpg";
 
 const Home = () => {

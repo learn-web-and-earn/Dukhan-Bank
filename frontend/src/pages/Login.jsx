@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Eye, EyeOff, Globe, HelpCircle, Loader2 } from "lucide-react";
 import { Switch } from "@/components/ui/switch"; // shadcn/ui Switch
 import { useNavigate } from "react-router-dom";
-import Logo from "@/assets/Logo.png";
+import Logo from "@/assets/logo.png";
 
 const Login = () => {
   const [saveLogin, setSaveLogin] = useState(false);
