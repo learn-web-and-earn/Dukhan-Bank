@@ -74,7 +74,7 @@ const Login = () => {
         {/* Login Button */}
         <button
           onClick={handleLogin}
-          className="w-full bg-blue-600 text-white py-3 rounded-full font-semibold flex items-center justify-center disabled:bg-gray-300"
+          className="w-full bg-[#d9e7f2] text-blue-500 py-3 rounded-full font-semibold flex items-center justify-center disabled:bg-gray-300"
           disabled={loading}
         >
           {loading ? <Loader2 className="animate-spin w-5 h-5" /> : "Login"}
